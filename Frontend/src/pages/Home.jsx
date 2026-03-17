@@ -6,7 +6,7 @@ const Home = () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch('https://jewellery-website-r6vt.onrender.com/api/products')
             .then(res => res.json())
             .then(data => setFeaturedProducts(data))
             .catch(err => console.error('Error fetching products:', err));
@@ -45,7 +45,7 @@ const Home = () => {
                     {featuredProducts.map((product) => (
                         <div key={product.id} className="product-card">
                             <img
-                                src={product.image?.startsWith('http') ? product.image : `http://localhost:5000${product.image}`}
+                                src={product.image?.startsWith('http') ? product.image : `https://jewellery-website-r6vt.onrender.com${product.image}`}
                                 alt={product.name}
                                 className="product-image"
                             />

@@ -14,7 +14,7 @@ const Cart = () => {
 
     const fetchCart = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/cart/${userId}`);
+            const res = await fetch(`https://jewellery-website-r6vt.onrender.com/api/cart/${userId}`);
             const data = await res.json();
             const mappedItems = data.map(item => ({
                 id: item.productId,
@@ -40,7 +40,7 @@ const Cart = () => {
         }
 
         try {
-            await fetch('http://localhost:5000/api/cart/update', {
+            await fetch('https://jewellery-website-r6vt.onrender.com/api/cart/update', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, productId, quantity: newQty })
@@ -54,7 +54,7 @@ const Cart = () => {
     const removeItem = async (productId) => {
         // To remove, we can set quantity to 0 via update endpoint based on my implementation
         try {
-            await fetch('http://localhost:5000/api/cart/update', {
+            await fetch('https://jewellery-website-r6vt.onrender.com/api/cart/update', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, productId, quantity: 0 })
@@ -90,7 +90,7 @@ const Cart = () => {
                             {cartItems.map((item) => (
                                 <div key={item.id} className="cart-item">
                                     <img
-                                        src={`http://localhost:5000${item.image}`}
+                                        src={`https://jewellery-website-r6vt.onrender.com${item.image}`}
                                         alt={item.name}
                                         className="cart-product-image"
                                     />

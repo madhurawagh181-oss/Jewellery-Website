@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/products/${id}`)
+        fetch(`https://jewellery-website-r6vt.onrender.com/api/products/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data);
@@ -27,7 +27,7 @@ const ProductDetails = () => {
     const addToCart = () => {
         // Simple alert for now, or assume guest user
         const userId = localStorage.getItem('userId') || 'guest';
-        fetch('http://localhost:5000/api/cart/add', {
+        fetch('https://jewellery-website-r6vt.onrender.com/api/cart/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userId, productId: id, quantity })
@@ -57,13 +57,13 @@ const ProductDetails = () => {
                 {/* Left Column: Image Gallery */}
                 <div className="product-gallery">
                     <img
-                        src={product.image?.startsWith('http') ? product.image : `http://localhost:5000${product.image}`}
+                        src={product.image?.startsWith('http') ? product.image : `https://jewellery-website-r6vt.onrender.com${product.image}`}
                         alt={product.name}
                         className="main-product-image"
                     />
 
                     <div className="thumbnail-list">
-                        <img src={product.image?.startsWith('http') ? product.image : `http://localhost:5000${product.image}`} alt="thumb" className="thumbnail" />
+                        <img src={product.image?.startsWith('http') ? product.image : `https://jewellery-website-r6vt.onrender.com${product.image}`} alt="thumb" className="thumbnail" />
                     </div>
                 </div>
 

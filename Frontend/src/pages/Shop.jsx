@@ -30,7 +30,7 @@ const Shop = () => {
 
     // Fetch products from backend
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch('https://jewellery-website-r6vt.onrender.com/api/products')
             .then(res => res.json())
             .then(data => {
                 const mappedData = data.map(item => {
@@ -197,7 +197,7 @@ const Shop = () => {
                                             </svg>
                                         </button>
                                         <img
-                                            src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`}
+                                            src={product.image.startsWith('http') ? product.image : `https://jewellery-website-r6vt.onrender.com${product.image}`}
                                             alt={product.name}
                                             className="shop-product-image"
                                             loading="lazy"
