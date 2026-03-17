@@ -1,0 +1,474 @@
+/* Shop Page Styles - Luxury Theme */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+.shop-container {
+    font-family: 'Inter', sans-serif;
+    background-color: #faf9f6;
+    /* Soft beige background */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography styles */
+.luxury-text {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navbar overrides for Shop page */
+.shop-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.shop-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2ebfa5;
+    /* Brand teal */
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.shop-nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.shop-nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.shop-nav-links a:hover,
+.shop-nav-links a.active {
+    color: #2ebfa5;
+}
+
+.shop-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2ebfa5;
+    transition: width 0.3s ease;
+}
+
+.shop-nav-links a:hover::after,
+.shop-nav-links a.active::after {
+    width: 100%;
+}
+
+/* Shop Layout Header */
+.shop-header-banner {
+    background-color: #2ebfa5;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.shop-header-banner h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.shop-header-banner p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+/* Main Shop Area */
+.shop-main {
+    display: flex;
+    padding: 0 4rem 4rem 4rem;
+    gap: 3rem;
+    flex: 1;
+}
+
+/* Sidebar Styles */
+.shop-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.filter-group {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1.5rem;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filter-label:hover {
+    color: #2ebfa5;
+}
+
+/* Custom Checkbox/Radio styling implicitly using standard inputs for now, 
+   could be stylized further for luxury look */
+.filter-label input {
+    accent-color: #2ebfa5;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Price Slider */
+.price-slider-container {
+    padding: 10px 0;
+}
+
+.price-range {
+    width: 100%;
+    accent-color: #2ebfa5;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Content Area */
+.shop-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Search and Sort Toolbar */
+.shop-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-bar-container {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.8rem 1.2rem 0.8rem 2.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+}
+
+.search-input:focus {
+    border-color: #2ebfa5;
+    box-shadow: 0 0 0 3px rgba(46, 191, 165, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sort-label {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.sort-select {
+    padding: 0.6rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+}
+
+.sort-select:focus {
+    border-color: #2ebfa5;
+}
+
+/* Product Grid */
+.shop-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Product Card - Luxury Aesthetic */
+.shop-product-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.shop-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.shop-product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.shop-product-card:hover .shop-product-image {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #ccc;
+    transition: color 0.3s, transform 0.2s;
+    z-index: 2;
+}
+
+.wishlist-btn:hover {
+    color: #ff4d4f;
+    transform: scale(1.1);
+}
+
+.wishlist-btn.active {
+    color: #ff4d4f;
+}
+
+.shop-product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.shop-product-category {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.shop-product-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #222;
+    line-height: 1.4;
+    transition: color 0.3s;
+}
+
+.shop-product-card:hover .shop-product-name {
+    color: #2ebfa5;
+}
+
+.shop-product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.shop-product-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.shop-btn-details {
+    background-color: transparent;
+    color: #2ebfa5;
+    border: 1px solid #2ebfa5;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.shop-product-card:hover .shop-btn-details {
+    background-color: #2ebfa5;
+    color: white;
+}
+
+/* Empty State */
+.no-products {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.no-products h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .shop-main {
+        flex-direction: column;
+        padding: 0 2rem 3rem 2rem;
+        gap: 2rem;
+    }
+
+    .shop-sidebar {
+        width: 100%;
+        position: static;
+        padding: 1.5rem;
+    }
+
+    .filter-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .shop-header-banner {
+        padding: 2.5rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-navbar {
+        padding: 1rem 2rem;
+    }
+
+    .shop-nav-links {
+        display: none;
+        /* In a real app, implement a hamburger menu */
+    }
+
+    .shop-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-bar-container {
+        max-width: 100%;
+    }
+
+    .shop-product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-main {
+        padding: 0 1rem 2rem 1rem;
+    }
+
+    .shop-product-grid {
+        grid-template-columns: 1fr;
+    }
+}
