@@ -10,7 +10,7 @@ const User = require('./models/User');
 const Cart = require('./models/Cart');
 const Order = require('./models/Order');
 
-const API = import.meta.env.VITE_API_URL;
+const API = process.env.API;
 const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require('path');
