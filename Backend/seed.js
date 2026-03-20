@@ -1,4 +1,4 @@
-require('dotenv').config();
+npm irequire('dotenv').config();
 const mongoose = require('mongoose');
 const Product = require('./models/Product');
 
