@@ -9,7 +9,7 @@ const Payment = () => {
 
     useEffect(() => {
         if (userId) {
-            fetch(`http://localhost:5000/api/cart/${userId}`)
+            fetch(`https://jewellery-website-r6vt.onrender.com/api/cart/${userId}`)
                 .then(res => res.json())
                 .then(data => {
                     const mappedItems = data.map(item => ({
@@ -31,7 +31,7 @@ const Payment = () => {
     const handlePayNow = async () => {
         // Post order to backend
         try {
-            const res = await fetch('http://localhost:5000/api/orders', {
+            const res = await fetch('https://jewellery-website-r6vt.onrender.com/api/orders', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, items: cartItems, total })
